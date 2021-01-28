@@ -9,23 +9,23 @@ class App extends React.Component {
   };
 
   addTask = (newTask) => {
-    console.log(newTask)
-    this.setState(currentState => {
+    console.log(newTask);
+    this.setState((currentState) => {
       return {
-        tasks: [...currentState.task, newTask]
-      }
-    })
-  }
+        tasks: [...currentState.tasks, newTask],
+      };
+    });
+  };
 
   render() {
     return (
       <div>
         <h1>Task List</h1>
-        <Form />
+        <Form addTask={this.addTask} />
         <ul>
-        {this.state.tasks.map((task) => {
-          return <li key={task}>{task}</li>;
-        })}
+          {this.state.tasks.map((task) => {
+            return <li key={task}>{task}</li>;
+          })}
         </ul>
       </div>
     );

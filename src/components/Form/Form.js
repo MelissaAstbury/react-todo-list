@@ -1,27 +1,28 @@
 import React from 'react';
-import Button from "../Buttons/buttons";
-// import App from "../../App"
 
 class Form extends React.Component {
+  state = {
+    newTask: '',
+  };
   handleSubmit = (event) => {
     event.preventDefault();
-    const newTask = {...this.state.tasks};
-    this.props.addTask(newTask);
-  }
+    console.dir(this.state.newTask);
+    this.props.addTask(this.state.newTask);
+  };
 
-  handleClick = (event) => {
-    event.preventDefault();
-    
-  }
+  handleChange = (event) => {
+    this.setState({ newTask: event.target.value });
+  };
 
   render() {
+    const { handleSubmit, handleChange, state } = this;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>
           Add new task
-          <input type="text" />
+          <input onChange={handleChange} type="text" value={state.newTask} />
         </label>
-      <button onClick={this.handleClick}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     );
   }
