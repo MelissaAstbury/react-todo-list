@@ -7,6 +7,7 @@ class List extends React.Component {
     tasks: ['Wash Hair', 'Hoover the living-room'],
     openEdit: false,
     taskEdited: '',
+    taskToDelete: 0,
     taskToEdit: 0,
   };
 
@@ -30,8 +31,8 @@ class List extends React.Component {
     this.setState({ taskEdited: event.target.value });
   };
 
+
   saveChanges = (event) => {
-    console.log(event.target.value);
     this.setState((currentState) => {
       const newTasks = [...currentState.tasks];
       newTasks[currentState.taskToEdit] = this.state.taskEdited;
@@ -40,6 +41,16 @@ class List extends React.Component {
       };
     });
   };
+
+
+  deleteTask = (task, index) => {
+    this.setState((currentState) => {
+        this.setState({taskToDelete : index})
+        const chosenTasks = [...currentState.tasks];
+        chosenTasks[currentState.taskToDelete] = this.state.taskToDelete;
+        chosenTasks.splice(index, 1);
+    });
+  }
 
   render() {
     return (
@@ -64,6 +75,7 @@ class List extends React.Component {
                 task={task}
                 key={task}
                 editTask={this.editTask}
+                deleteTask={this.deleteTask}
                 index={index}
               />
             );
