@@ -19,12 +19,12 @@ class List extends React.Component {
         return <main>
         <h1>Task List</h1>
         <Form addTask={this.addTask} />
-        <ListItem newTask={this.state.newTask}/>
-        {/* <ul>
+        <ul>
           {this.state.tasks.map((task) => {
-            return <li key={task}>{task}</li>;
-          })}
-        </ul> */}
+            return <ListItem task={task} key={task} />
+            })
+          }
+        </ul>
       </main>
     }
 }
