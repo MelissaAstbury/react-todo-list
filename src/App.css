@@ -1,1 +1,69 @@
-/
+.App {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: antiquewhite;
+  margin: 20px 10%;
+  padding: 20px;
+}
+
+.title {
+  letter-spacing: 2px;
+  padding-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0;
+}
+
+.submit {
+  border: 1px solid green;
+  border-radius: 4px;
+  background-color: aquamarine;
+}
+
+.submit:hover {
+  color: white;
+  background-color: rgb(56, 111, 8);
+}
+
+.edit {
+  border: 1px solid rgb(30, 116, 191);
+  border-radius: 4px;
+  background-color: rgb(30, 116, 191);
+  padding: 10px;
+}
+
+.delete {
+  border: 1px solid rgb(147, 56, 56);
+  border-radius: 4px;
+  background-color: rgb(147, 56, 56);
+  padding: 10px;
+}
+
+.edit:hover {
+  cursor: pointer;
+  background-color: rgb(112, 162, 206);
+}
+
+.delete:hover {
+  cursor: pointer;
+  background-color: rgb(187, 141, 141);
+}
+
+.item-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.item-container {
+  padding: 8px 0;
+}

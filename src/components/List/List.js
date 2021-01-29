@@ -31,7 +31,6 @@ class List extends React.Component {
     this.setState({ taskEdited: event.target.value });
   };
 
-
   saveChanges = (event) => {
     this.setState((currentState) => {
       const newTasks = [...currentState.tasks];
@@ -42,20 +41,19 @@ class List extends React.Component {
     });
   };
 
-
   deleteTask = (task, index) => {
     this.setState((currentState) => {
-        this.setState({taskToDelete : index})
-        const chosenTasks = [...currentState.tasks];
-        chosenTasks[currentState.taskToDelete] = this.state.taskToDelete;
-        chosenTasks.splice(index, 1);
+      this.setState({ taskToDelete: index });
+      const chosenTasks = [...currentState.tasks];
+      chosenTasks[currentState.taskToDelete] = this.state.taskToDelete;
+      chosenTasks.splice(index, 1);
     });
-  }
+  };
 
   render() {
     return (
       <main>
-        <h1>Task List</h1>
+        <h1 className="title">Task List</h1>
         {this.state.openEdit ? (
           <>
             <input

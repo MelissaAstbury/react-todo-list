@@ -7,13 +7,19 @@ const ListItem = (props) => {
 
   const handleDelete = () => {
     props.deleteTask(props.task, props.index);
-  }
+  };
 
   return (
-    <section>
+    <section className="item-container">
       <h3>{props.task}</h3>
-      <button onClick={handleClick}>Edit</button>
-      <button onClick={handleDelete}>Delete</button>
+      <div className="item-buttons">
+        <button className="edit" onClick={handleClick}>
+          Edit
+        </button>
+        <button className="delete" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
     </section>
   );
 };
