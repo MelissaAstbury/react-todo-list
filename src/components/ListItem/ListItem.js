@@ -1,14 +1,15 @@
 import React from 'react';
 
 const ListItem = (props) => {
-  console.log(props)
+  const handleClick = () => {
+    props.editTask(props.task);
+  };
+
   return (
     <section>
-    <h3>
-      {props.name}
-    </h3>
-    <button>Edit</button>
-    <button>Delete</button>
+      <h3>{props.task}</h3>
+      <button onClick={handleClick}>Edit</button>
+      <button>Delete</button>
     </section>
   );
 };
