@@ -4,6 +4,7 @@ class Form extends React.Component {
   state = {
     newTask: '',
   };
+
   handleSubmit = (event) => {
     event.preventDefault();
     console.dir(this.state.newTask);
@@ -12,6 +13,7 @@ class Form extends React.Component {
 
   handleChange = (event) => {
     this.setState({ newTask: event.target.value });
+    console.log(this.state.newTask);
   };
 
   render() {
